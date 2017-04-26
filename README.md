@@ -2,4 +2,5 @@
 # Mohsin Rizvi
 A procedurally-generated text-based RPG with save files! Also, written
 in Python. I'm starting this project because I want to get more experience
-using Python (this is why I'm not writing it in C++, my language of choice).
+using Python (which is why I'm not writing it in C++, my language of
+choice).
