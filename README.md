@@ -1,2 +1,5 @@
 # print-adventure
-A procedurally-generated, text-based RPG written in Python (with save files)!
+# Mohsin Rizvi
+A procedurally-generated text-based RPG with save files! Also, written
+in Python. I'm starting this project because I want to get more experience
+using Python (this is why I'm not writing it in C++, my language of choice).
