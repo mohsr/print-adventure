@@ -1,5 +1,4 @@
-# print-adventure
-# A text-based adventure
+# print-adventure: A text-based adventure
 Written by:  Mohsin Rizvi
 Last edited: 04/27/17
 
