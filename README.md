@@ -18,7 +18,7 @@ Acknowledgments will be added here as the project goes on.
 
 Thanks to everyone who has played a part in my computer science
 education so far! And many thanks to my terrific girlfriend for
-listening to me talk about CS all the time. <3
+listening to me talk about this stuff all the time. <3
 
 ## C. Files
 
