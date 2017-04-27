@@ -1,5 +1,5 @@
 # print-adventure
-# A text-based adventure brought
+# A text-based adventure
 
 -----------------------------
 | Written by:  Mohsin Rizvi |
