@@ -14,7 +14,7 @@ import cbt_ability
 # The Player character.
 class Player:
 
-	# Purpose: 	  Constructor for the Player class.
+	# Purpose:    Constructor for the Player class.
 	# Parameters: A name for the Player, which defaults to "Hero", a player
 	#             profession (class), and the player's race (human, elf, etc).
 	# Return:     Void
