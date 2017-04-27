@@ -25,6 +25,7 @@ listening to me talk about this stuff all the time. <3
 Here is a brief overview of every file in the project.
 
   game.py
+  
     Contains the definition of the Game class used to run the whole game.
 
   player.py
