@@ -98,7 +98,7 @@ class Game:
         # University Computer Science Facebook group for suggesting that
         # I use pickle. More info in README.md.
         retrieved = pickle.load(open(self.path + "/" + toLoad, "rb"))
-        print("Game loaded!")
+        print("Game loaded!\n")
         # Run the game
         retrieved.play()
 
@@ -108,6 +108,9 @@ class Game:
     def newGame(self):
         saves = self.getFiles(self.path)
         invalNames = ["back", "sample_game"]
+        lowerSaves = list()
+        for i in saves:
+            lowerSaves.append(i.lower())
         # Start the save game
         gameName = input("What would you like to call this new game?" + 
                          " Type \"back\" to return to the main" +
@@ -115,7 +118,7 @@ class Game:
         lowerName = gameName.lower()
         if lowerName == "back":
             return
-        while (gameName in saves or lowerName in invalNames
+        while (lowerName in lowerSaves or lowerName in invalNames
         or gameName[0] == "."):
             gameName = input("Sorry, that game name is invalid. What would" +
                              " you like to name this game? Type \"back\" to" +
