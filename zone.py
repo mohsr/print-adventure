@@ -4,7 +4,7 @@ zone.py
 Contains definitions of the WorldMap class, the Zone class, and all
 children of the Zone class.
 Written by:  Mohsin Rizvi
-Last edited: 04/27/17
+Last edited: 05/13/17
 
 """
 
@@ -17,7 +17,13 @@ class WorldMap:
 	# Parameters: None
 	# Return:     Void
 	def __init__(self):
-		self.zones = dict()
+		self.initZones()
+
+	# Purpose:    Initializes a basic empty zone map of the world.
+	# Parameters: None
+	# Return:     Void
+	def initZones(self):
+		self.zones = [[]]
 
 # Holds data of an individual zone.
 class Zone:

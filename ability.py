@@ -7,6 +7,8 @@ Last edited: 04/27/17
 
 """
 
+import basics
+
 # An ability to use out of combat.
 class Ability:
 
