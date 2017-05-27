@@ -1,4 +1,4 @@
-# lift-olympus: A text-based adventure
+# Print-Adventure: A text-based adventure
 Written by:  Mohsin Rizvi
 
 Last edited: 05/26/17
