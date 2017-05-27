@@ -12,6 +12,7 @@ import os
 import basics
 import player
 import pickle
+import time
 
 # An instance of the interactive game.
 class SaveGame:
@@ -36,9 +37,9 @@ class SaveGame:
     # Parameters: None
     # Return:     Void
     def new(self):
-        print("Starting a new game. Have fun!")
-        self.createCharacter()
+        print("Starting a new game. Have fun!\n")
         self.printControls()
+        self.createCharacter()
         self.start()
         self.play()
         self.save()
@@ -53,7 +54,7 @@ class SaveGame:
     # Parameters: None
     # Return:     Void
     def save(self):
-        print("Saving game...")
+        print("\nSaving game...")
 
         # Save the game
         # Credit given to Zach Kirsch and Nikhil Shinday from the Tufts
@@ -61,7 +62,7 @@ class SaveGame:
         # I use pickle. More info in README.md.
         pickle.dump(self, open(self.path, "wb"))
 
-        print("Game saved!")
+        print("Game saved!\n")
 
     # Purpose:    Begin character creation and create the Player.
     # Parameters: None
@@ -76,18 +77,24 @@ class SaveGame:
         # Collect basic character info from the player
         name = input("Hello young hero. What is your name?\n").strip()
         # Collect player race
-        print(("Ah, %s then. You've been asleep quite some time.\n" +
-              "I am an old inhabitant of this world.\nI can't quite see" +
+        time.sleep(1)
+        print(("Ah, %s then. You've been asleep quite some time." +
+              " I am an old inhabitant of this world. I can't quite see" +
               " you too well. Tell me, are you a human, a dwarf, or an elf?")
               % name)
         race = basics.command(raceComms)
         # Collect player profession
+        time.sleep(1)
         print(("Ah, good. So, %s, how do you plan on defending yourself" +
               " in these vast lands? Are you a warrior, a mage, or a" +
               " ranger?") % name)
         prof = basics.command(jobComms)
+        time.sleep(1)
         # Create the player
         self.player = player.Player(name, race, prof)
+        print("Very good then. Are you ready? Your adventure is about to" +
+              " begin...\n")
+        time.sleep(3)
 
     # Purpose:    Prints the controls.
     # Parameters: None
@@ -97,12 +104,15 @@ class SaveGame:
               " the actions you do are entered into the game through the\n" +
               " keyboard. To print all of the possible commands at any\n" +
               " time, just type in \"$\". To save the game (when not in\n" +
-              " a talking sequence or in combat), type in \"save\".")
+              " a talking sequence or in combat), type in \"save\".\n")
 
     # Purpose:    Introduces the player to the actual game.
     # Parameters: None
     # Return:     Void
     def start(self):
-        print("You wake up on a beach.\nYou don't remember much, only your" +
-              " name and a few facts about your life and where you come" + 
-              " from.\nWhat you do now is up to you!")
+        print("You wake up on a beach.")
+        time.sleep(2)
+        print("You don't remember much, only your name and some facts about" +
+              " your life and where you come from.")
+        time.sleep(2)
+        print("What will you do next?")
