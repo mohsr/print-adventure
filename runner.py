@@ -1,9 +1,9 @@
 """
 
 runner.py
-Runs the game. Also sed to test the functionality of the game piece-by-piece.
+Runs the game. Also used to test the functionality of the game.
 Written by:  Mohsin Rizvi
-Last edited: 05/02/17
+Last edited: 05/27/17
 
 """
 
