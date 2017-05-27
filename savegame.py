@@ -114,4 +114,4 @@ class SaveGame:
         print("You don't remember much, only your name and some facts about" +
               " your life and where you come from.")
         time.sleep(2)
-        print("What will you do next?")
+        print("What will you do next?\n")
