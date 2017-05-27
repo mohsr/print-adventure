@@ -38,14 +38,18 @@ Thanks to everyone who has played a part in my computer science
 education so far! And many thanks to my terrific girlfriend for
 listening to me talk about this stuff all the time. <3
 
-## C. Files
+## C. Files and Folders
 
-Here is a brief overview of every file in the project.
+Here is a brief overview of every file and folder in the project.
+
+  ### Files
 
   README.md
+
     You're reading this! Contains information on the overall project.
 
   basics.py
+
     Contains definitions of basic functions used for the game.
 
   game.py
@@ -91,3 +95,15 @@ Here is a brief overview of every file in the project.
 
     Contains the definition of the Bio class, which generates and stores
     background biographical info for a character.
+
+  sample_game
+
+    Contained in the games folder. This is an actual instance of a saved game
+    file, but is mostly used as a placeholder for the folder. All saved game
+    files will go in the games folder alongside this one.
+
+  ### Folders
+
+  games
+
+    Contains saved game files.
