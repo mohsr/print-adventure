@@ -42,7 +42,6 @@ class SaveGame:
         self.createCharacter()
         self.start()
         self.play()
-        self.save()
 
     # Purpose:    Plays the game.
     # Parameters: None
