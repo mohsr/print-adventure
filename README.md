@@ -1,7 +1,7 @@
 # Print-Adventure: A text-based adventure
 Written by:  Mohsin Rizvi
 
-Last edited: 05/26/17
+Last edited: 05/27/17
 
 # *README*
 
