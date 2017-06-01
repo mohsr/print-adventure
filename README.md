@@ -71,9 +71,7 @@ Here is a brief overview of every file and folder in the project.
     
   zone.py
   
-    Contains the definition of the WorldMap class, the Zone class, and
-    
-    all the children classes of Zone.
+    Contains the definition of the WorldMap class and the Zone class.
     
   npc.py
   
