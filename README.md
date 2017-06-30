@@ -48,9 +48,11 @@ specific biome. I call it "Rizvi's Algorithm". Here it is:
 2. Mark that zone as "known".
 3. For each unknown neighboring zone of that zone, there is a 100% chance
    for the neighbor to inherit the same biome.
+   
     a. If it does inherit the same biome, mark the zone as known and
        recurse from step 3 for the neighbor zone, but with a chance to
        spread the biome equal to the neighbor's chance minus 10%.
+       
     b. If it does not inherit the same biome, recurse from step 1 for the
        neighbor zone.
 
