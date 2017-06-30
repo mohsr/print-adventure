@@ -3,7 +3,7 @@
 npc.py
 Contains the definition of the NPC class.
 Written by:  Mohsin Rizvi
-Last edited: 05/27/17
+Last edited: 06/29/17
 
 """
 
