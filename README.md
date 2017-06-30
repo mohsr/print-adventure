@@ -1,13 +1,13 @@
 # Print-Adventure: A text-based adventure
 Written by:  Mohsin Rizvi
 
-Last edited: 06/01/17
+Last edited: 06/29/17
 
 # *README*
 
 ## A. Overview
 
-A procedurally-generated text-based RPG with save files! Also, written
+A randomly-generated text-based RPG with save files! Also, written
 in Python. I'm doing this project because it's fun! And also because
 I want to get more experience using Python (which is why I'm not
 writing it in C++, my language of choice).
@@ -38,7 +38,28 @@ Thanks to everyone who has played a part in my computer science
 education so far! And many thanks to my terrific girlfriend for
 listening to me talk about this stuff all the time. <3
 
-## C. Files and Folders
+## C. Algorithms and Technical Stuff
+
+For world generation, I created my own recursive algorithm to generate biomes
+on the world map and to have zones near each other tend to be of the same
+specific biome. I call it "Rizvi's Algorithm". Here it is:
+
+1. Randomly assign a zone a biome.
+2. Mark that zone as "known".
+3. For each unknown neighboring zone of that zone, there is a 100% chance
+   for the neighbor to inherit the same biome.
+    a. If it does inherit the same biome, mark the zone as known and
+       recurse from step 3 for the neighbor zone, but with a chance to
+       spread the biome equal to the neighbor's chance minus 10%.
+    b. If it does not inherit the same biome, recurse from step 1 for the
+       neighbor zone.
+
+My implementation of the algorithm processes neighbors to the north, then
+east, then south, then west. It starts with a 100% chance to spread,
+reducing by 15% for each new neighbor "added" to the biome, but these
+numbers can be altered to adjust average biome size.
+
+## D. Files and Folders
 
 Here is a brief overview of every file and folder in the project.
 
@@ -76,23 +97,23 @@ Here is a brief overview of every file and folder in the project.
   npc.py
   
     Contains the definition of the NPC class.
+
+  enemy.py
+
+    Contains the definition of the Enemy class.
     
   ability.py
   
-    Contains the definition of the Ability class for out-of-combat
-    
-    abilities.
-    
-  cbt_ability.py
-  
-    Contains the definition of the CombatAbility class for in-combat
-    
-    abilities.
+    Contains the definition of the Ability class for combat abilities.
 
   bio.py
 
     Contains the definition of the Bio class, which generates and stores
     background biographical info for a character.
+
+  item.py
+
+    Contains the definition of the Item class.
 
   sample_game
 
