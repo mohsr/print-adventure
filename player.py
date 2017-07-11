@@ -3,7 +3,7 @@
 player.py
 Contains the definition of the Player class.
 Written by:  Mohsin Rizvi
-Last edited: 06/29/17
+Last edited: 07/11/17
 
 """
 
@@ -28,6 +28,7 @@ class Player:
         # Initialize and assign player stats and XP.
         self.assignStats()
         self.xp = 0
+        self.lvl = 1
         # Generate a world map.
         self.map = zone.WorldMap()
         # Initialize inventory slots and abilities.
@@ -37,8 +38,7 @@ class Player:
         # Initialize gear slots and give player basic gear.
         self.initGear()
         self.assignStarterGear()
-        # Calculate player damage dealt and initialize combat abilities.
-        self.initDamage()
+        # Initialize combat abilities.
         self.initAbilities()
 
     # Purpose:    Assigns the player stats based on race and profession.
@@ -164,11 +164,16 @@ class Player:
     # Return:     Void
     def assignStarterGear(self):
         pass
+        self.addItem("Apple", 3)
+        self.calcDamage()
 
     # Purpose:    Equip a piece of armor.
     # Parameters: The index of the piece of armor in the inventory.
     # Return:     Void
     def equipArmor(self, index):
+        if inv[index].type != "Armor" or inv[index].prof != self.prof:
+            print("You can't wear that!")
+            return
         # Equip the armor.
         self.armor = self.inv.pop(index)
         # Give the player the armor stats.
@@ -201,14 +206,23 @@ class Player:
     # Parameters: The inventory index of the weapon to equip.
     # Return:     Void
     def equipWeapon(self, index):
+        if inv[index].type != "Weapon" or inv[index].prof != self.prof:
+            print("That's not a weapon!")
+            return
         # Equip the weapon.
         self.weapon = self.inv.pop(index)
         # Give the player the weapon stats.
         self.poison_dmg += self.weapon.poison_dmg
-        self.cold_dmg += self.weapon.cold_dmg
         self.fire_dmg += self.weapon.fire_dmg
+        self.cold_dmg += self.weapon.cold_dmg
         self.electric_dmg += self.weapon.electric_dmg
         self.earth_dmg += self.weapon.earth_dmg
+        self.defense += self.weapon.defense
+        self.poison_resist += self.weapon.poison_resist
+        self.fire_resist += self.weapon.fire_resist
+        self.cold_resist += self.weapon.cold_resist
+        self.electric_resist += self.weapon.electric_resist
+        self.earth_resist += self.weapon.earth_resist
         self.calcDamage()
 
     # Purpose:    Unequip a weapon.
@@ -220,10 +234,16 @@ class Player:
             return
         # Adjust player stats accordingly.
         self.poison_dmg -= self.weapon.poison_dmg
-        self.cold_dmg -= self.weapon.cold_dmg
         self.fire_dmg -= self.weapon.fire_dmg
+        self.cold_dmg -= self.weapon.cold_dmg
         self.electric_dmg -= self.weapon.electric_dmg
         self.earth_dmg -= self.weapon.earth_dmg
+        self.defense -= self.weapon.defense
+        self.poison_resist -= self.weapon.poison_resist
+        self.fire_resist -= self.weapon.fire_resist
+        self.cold_resist -= self.weapon.cold_resist
+        self.electric_resist -= self.weapon.electric_resist
+        self.earth_resist -= self.weapon.earth_resist
         # Take the weapon off and recalculate damage.
         self.inv.append(self.weapon)
         self.weapon = None
@@ -233,6 +253,9 @@ class Player:
     # Parameters: The inventory index of the ring to equip.
     # Return:     Void
     def equipRing(self, index):
+        if inv[index].type != "Ring":
+            print("That's not a ring!")
+            return
         # Equip the ring.
         self.ring = self.inv.pop(index)
         # Give the player ring stats.
@@ -271,20 +294,37 @@ class Player:
         # If the player has no weapon:
         if self.weapon == None:
             self.damage = 1 * (self.str/2)
+            return
         # Calculate damage according to weapons for each profession.
         self.damage = self.weapon.damage
         if self.prof == "Warrior":
             self.damage += self.str
         elif self.prof == "Mage":
-            self.damage += self.int
+            self.damage += self.wis
         elif self.prof == "Ranger":
             self.damage += self.dex
 
-    # Purpose:    Gives the player the given item.
-    # Parameters: An item to give the player.
+    # Purpose:    Take the given amount of damage of the given attack type.
+    # Parameters: An int amount of damage, an optional int attack type.
     # Return:     Void
-    def addItem(self, item):
-        self.inv.append(item)
+    def takeDamage(damage_dealt, attack_type = "Default"):
+        pass
+
+    # Purpose:    Initialize player's abilities according to class. Abilities
+    #             are "given" to the player at start and unlocked over time.
+    # Parameters: None
+    # Return:     Void
+    def initAbilities(self):
+        pass
+
+    # Purpose:    Gives the player a certain amount of the given item.
+    # Parameters: A string item to give the player, and an optional amount of
+    #             items to give.
+    # Return:     Void
+    def addItem(self, itemName, amt = 1):
+        for i in range(amt):
+            newItem = item.Item(itemName)
+            self.inv.append(newItem)
 
     # Purpose:    Returns true if the player has an item with the given string
     #             name, false otherwise.
