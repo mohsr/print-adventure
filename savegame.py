@@ -4,7 +4,7 @@ savegame.py
 Contains the definition of the SaveGame class which holds an instance of the
 game.
 Written by:  Mohsin Rizvi
-Last edited: 05/27/17
+Last edited: 07/11/17
 
 """
 
@@ -24,7 +24,8 @@ class SaveGame:
     def __init__(self, filename, path):
         # Create a save games folder if it doesn't exist, then move to it
         # Credit given to Stack Overflow for helping me figure out how to get
-        # the filepath of the current script. More info in README.md.
+        # the filepath of the current script's directory. More info in
+        # README.md.
         gamesPath = os.path.dirname(os.path.realpath(__file__)) + "/games"
         if not os.path.isdir(gamesPath):
             os.mkdir(gamesPath)
@@ -109,7 +110,7 @@ class SaveGame:
     # Parameters: None
     # Return:     Void
     def start(self):
-        print("You wake up on a beach.")
+        print("You wake up in a strange land.")
         time.sleep(2)
         print("You don't remember much, only your name and some facts about" +
               " your life and where you come from.")
