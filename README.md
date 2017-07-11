@@ -141,7 +141,7 @@ Here is a brief overview of every file and folder in the project.
       For weapons:
         [Name]
         [Description]
-      Weapon
+        Weapon
         [Profession to be used by (Warrior, Mage, or Ranger)]
         [Integer damage]
         [Integer poison damage]
