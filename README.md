@@ -122,39 +122,39 @@ Here is a brief overview of every file and folder in the project.
     Contains a list of in-game items. To add an item, simply edit the list and
     type in the following, replacing all items in brackets:
       For food items:
-      [Name]
-      [Description]
-      Food
-      [Integer amount healed per bite]
-      [Integer number of bites]
+        [Name]
+        [Description]
+        Food
+        [Integer amount healed per bite]
+        [Integer number of bites]
       For armor:
-      [Name]
-      [Description]
-      Armor
-      [Profession to be used by (Warrior, Mage, or Ranger)]
-      [Integer defense]
-      [Integer poison resist]
-      [Integer fire resist]
-      [Integer cold resist]
-      [Integer electricity resist]
-      [Integer earth resist]
+        [Name]
+        [Description]
+        Armor
+        [Profession to be used by (Warrior, Mage, or Ranger)]
+        [Integer defense]
+        [Integer poison resist]
+        [Integer fire resist]
+        [Integer cold resist]
+        [Integer electricity resist]
+        [Integer earth resist]
       For weapons:
-      [Name]
-      [Description]
+        [Name]
+        [Description]
       Weapon
-      [Profession to be used by (Warrior, Mage, or Ranger)]
-      [Integer damage]
-      [Integer poison damage]
-      [Integer fire damage]
-      [Integer cold damage]
-      [Integer electricity damage]
-      [Integer earth damage]
-      [Integer defense]
-      [Integer poison resist]
-      [Integer fire resist]
-      [Integer cold resist]
-      [Integer electricity resist]
-      [Integer earth resist]
+        [Profession to be used by (Warrior, Mage, or Ranger)]
+        [Integer damage]
+        [Integer poison damage]
+        [Integer fire damage]
+        [Integer cold damage]
+        [Integer electricity damage]
+        [Integer earth damage]
+        [Integer defense]
+        [Integer poison resist]
+        [Integer fire resist]
+        [Integer cold resist]
+        [Integer electricity resist]
+        [Integer earth resist]
 
   sample_game
 
