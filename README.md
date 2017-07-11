@@ -8,9 +8,9 @@ Last edited: 07/11/17
 ## A. Overview
 
 A randomly-generated text-based RPG with save files! Also, written
-in Python. I'm doing this project because it's fun! And also because
-I want to get more experience using Python (which is why I'm not
-writing it in C++, my language of choice).
+in Python. I'm doing this project because it seems like fun, and I love
+RPGs! I've also wanted to write a text-based game for a while now.
+I chose Python over C++ so that I could gain more experience using Python.
 
 ## B. Acknowledgments
 
