@@ -3,7 +3,7 @@
 zone.py
 Contains definitions of the WorldMap class and the Zone class.
 Written by:  Mohsin Rizvi
-Last edited: 06/29/17
+Last edited: 07/11/17
 
 """
 
@@ -24,7 +24,7 @@ class WorldMap:
         self.genZones()
 
         # TEST CODE used to see how the map generates.
-        self.printMap()
+        #self.printMap()
 
     # Purpose:    Initializes a basic empty zone map of the world.
     # Parameters: None
