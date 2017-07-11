@@ -1,7 +1,7 @@
 # Print-Adventure: A text-based adventure
 Written by:  Mohsin Rizvi
 
-Last edited: 06/29/17
+Last edited: 07/11/17
 
 # *README*
 
@@ -48,7 +48,7 @@ specific biome. I call it "Rizvi's Algorithm". Here it is:
 2. Mark that zone as "known".
 3. For each unknown neighboring zone of that zone, there is a 100% chance
    for the neighbor to inherit the same biome.
-   
+
     a. If it does inherit the same biome, mark the zone as known and
        recurse from step 3 for the neighbor zone, but with a chance to
        spread the biome equal to the neighbor's chance minus 10%.
@@ -116,6 +116,45 @@ Here is a brief overview of every file and folder in the project.
   item.py
 
     Contains the definition of the Item class.
+
+  items
+
+    Contains a list of in-game items. To add an item, simply edit the list and
+    type in the following, replacing all items in brackets:
+      For food items:
+      [Name]
+      [Description]
+      Food
+      [Integer amount healed per bite]
+      [Integer number of bites]
+      For armor:
+      [Name]
+      [Description]
+      Armor
+      [Profession to be used by (Warrior, Mage, or Ranger)]
+      [Integer defense]
+      [Integer poison resist]
+      [Integer fire resist]
+      [Integer cold resist]
+      [Integer electricity resist]
+      [Integer earth resist]
+      For weapons:
+      [Name]
+      [Description]
+      Weapon
+      [Profession to be used by (Warrior, Mage, or Ranger)]
+      [Integer damage]
+      [Integer poison damage]
+      [Integer fire damage]
+      [Integer cold damage]
+      [Integer electricity damage]
+      [Integer earth damage]
+      [Integer defense]
+      [Integer poison resist]
+      [Integer fire resist]
+      [Integer cold resist]
+      [Integer electricity resist]
+      [Integer earth resist]
 
   sample_game
 
