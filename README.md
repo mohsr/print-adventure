@@ -155,6 +155,20 @@ Here is a brief overview of every file and folder in the project.
         [Integer cold resist]
         [Integer electricity resist]
         [Integer earth resist]
+      For rings:
+        [Name]
+        [Description]
+        Ring
+        [Strength bonus]
+        [Wisdom bonus]
+        [Dexterity bonus]
+        [Charisma bonus]
+        [Luck bonus]
+        [Perception bonus]
+      For misc items (items that are none of the above):
+        [Name]
+        [Description]
+        Misc
 
   sample_game
 
