@@ -12,13 +12,15 @@ in Python. I'm doing this project because it seems like fun, and I love
 RPGs! I've also wanted to write a text-based game for a while now.
 I chose Python over C++ so that I could gain more experience using Python.
 
-Things yet to be implemented, listed in (hopefully) chronological order:
-  Combat abilities
-  Enemies
-  Combat system
-  NPCs
-  Interaction between player and world
-  Quests
+Things yet to be implemented are listed below. I plan on implementing them
+starting with item 1, then 2, and so on.
+
+  1. Combat abilities
+  2. Enemies
+  3. Combat system
+  4. NPCs
+  5. Interaction between player and world
+  6. Quests
 
 ## B. Acknowledgments
 
