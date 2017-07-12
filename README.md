@@ -18,9 +18,11 @@ starting with item 1, then 2, and so on.
   1. Combat abilities
   2. Enemies
   3. Combat system
-  4. Non-combat NPCs
-  5. Interaction between player and world
-  6. Quests
+  4. Dungeons
+  5. Non-combat NPCs
+  6. Towns and cities
+  7. Interaction between player and world
+  8. Quests
 
 ## B. Acknowledgments
 
