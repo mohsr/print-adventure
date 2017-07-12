@@ -3,11 +3,12 @@
 item.py
 Contains the definition of the Item class.
 Written by:  Mohsin Rizvi
-Last edited: 07/11/17
+Last edited: 07/12/17
 
 """
 
-import os
+#import os
+import basics
 
 # An Item.
 class Item:
@@ -17,31 +18,9 @@ class Item:
     # Return:     Void
     def __init__(self, name):
         self.name = name
-        self.fixData()
+        # Append a new line char ("\n") to end of file
+        basics.fixData("items")
         self.openData()
-
-    # Purpose:    Appends a new line to the end of the item directory if one
-    #             is not already present.
-    # Parameters: None
-    # Return:     Void
-    def fixData(self):
-        # Credit given to Stack Overflow for helping me figure out how to get
-        # the filepath of the current script's directory. More info in 
-        # README.md.
-        path = os.path.dirname(os.path.realpath(__file__))
-        if not os.path.isdir(path):
-            os.mkdir(path)
-        os.chdir(path)
-
-        # Open the item directory file for reading and writing.
-        with open("items", "r+") as fixer:
-            x = fixer.read()
-            # Check last character, add a new line char if one is not present
-            if len(x) > 0:
-                if x[len(x) - 1] != "\n":
-                    fixer.write("\n")
-            else:
-                fixer.write("\n")
 
     # Purpose:    Gives the item data according to its name using a database
     #             of items stored in a file.
@@ -51,15 +30,20 @@ class Item:
         # Open item directory file for reading.
         with open("items", "r") as self.reader:
             # Find the correct item in the file
+            # Read one line at a time, seeing if it is the empty string (eof)
             x = self.reader.readline()
             if x == "":
                 print("ERROR: Item not found.")
                 return
-            while x != self.name + "\n":
+            # While item is not found, search until empty string (eof)
+            while x.lower() != self.name.lower() + "\n":
                 x = self.reader.readline()
                 if x == "":
                     print("ERROR: Item not found.")
                     return
+            # Set item name to name in directory to fix capitalization
+            # errors
+            self.name = x[0:len(x) - 1]
             # Read the data into the Item object.
             self.readData()
 
@@ -163,16 +147,19 @@ class Item:
     def getMiscData(self):
         if self.type != "Misc":
             return
+        # No misc data!
 
     # Purpose:    Prints item data.
     # Parameters: None
     # Return:     Void
     def printData(self):
+        # For weapons and armor, print player class as well
         if self.type == "Weapon" or self.type == "Armor":
             print("Item: " + self.name + ". " + self.prof + " " +
                   self.type + ". " + self.desc)
         else:
             print("Item: " + self.name + ". " + self.type + ". " + self.desc)
+        # Print stats according to item type
         if self.type == "Food":
             self.printFood()
         elif self.type == "Armor":
@@ -188,6 +175,7 @@ class Item:
     # Parameters: None
     # Return:     Void
     def printFood(self):
+        # Print food stats
         print("    HP per bite: " + str(self.hp_per_bite))
         print("    No. of bites: " + str(self.bites))
 
@@ -195,6 +183,7 @@ class Item:
     # Parameters: None
     # Return:     Void
     def printArmor(self):
+        # Print defense and all other non-zero stats
         print("    Defense: " + str(self.defense))
         if self.poison_resist != 0:
             print("    Poison resist: " + str(self.poison_resist))
@@ -211,6 +200,7 @@ class Item:
     # Parameters: None
     # Return:     Void
     def printWeapon(self):
+        # Print base damage and all other non-zero stats
         print("    Base damage: " + str(self.damage))
         if self.poison_dmg != 0:
             print("    Poison damage: " + str(self.poison_dmg))
@@ -239,6 +229,7 @@ class Item:
     # Parameters: None
     # Return:     Void
     def printRing(self):
+        # Print all non-zero stats
         if self.str != 0:
             print("    Strength bonus: " + str(self.str))
         if self.wis != 0:
@@ -256,4 +247,5 @@ class Item:
     # Parameters: None
     # Return:     Void
     def printMisc(self):
+        # Nothing to print!
         pass
