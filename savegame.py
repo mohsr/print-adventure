@@ -4,7 +4,7 @@ savegame.py
 Contains the definition of the SaveGame class which holds an instance of the
 game.
 Written by:  Mohsin Rizvi
-Last edited: 07/11/17
+Last edited: 07/12/17
 
 """
 
@@ -26,9 +26,12 @@ class SaveGame:
         # Credit given to Stack Overflow for helping me figure out how to get
         # the filepath of the current script's directory. More info in
         # README.md.
+        # Get the path of this script's directory with "/games" added
         gamesPath = os.path.dirname(os.path.realpath(__file__)) + "/games"
+        # If the path is not already a valid directory, create it
         if not os.path.isdir(gamesPath):
             os.mkdir(gamesPath)
+        # Change working directory to the newly created one
         os.chdir(gamesPath)
 
         self.gameName = filename
