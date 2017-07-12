@@ -1,7 +1,7 @@
 # Print-Adventure: A text-based adventure
 Written by:  Mohsin Rizvi
 
-Last edited: 07/11/17
+Last edited: 07/12/17
 
 # *README*
 
@@ -12,19 +12,27 @@ in Python. I'm doing this project because it seems like fun, and I love
 RPGs! I've also wanted to write a text-based game for a while now.
 I chose Python over C++ so that I could gain more experience using Python.
 
+Things yet to be implemented, listed in (hopefully) chronological order:
+  Combat abilities
+  Enemies
+  Combat system
+  NPCs
+  Interaction between player and world
+  Quests
+
 ## B. Acknowledgments
 
 Stack Overflow assisted me in writing this project. Stack Overflow uses a
 cc-by-sa license, meaning all content can be adapted and used for
 any purpose (https://creativecommons.org/licenses/by-sa/3.0/).
-In particular, it helped me on the following occasions:
-  Finding the filepath of the directory containing the current script that
-  is running (http://stackoverflow.com/questions/4934806/
-  how-can-i-find-scripts-directory-with-python). The question was asked by
-  user Jonathan (http://stackoverflow.com/users/348545/jonathan) and edited
-  by user Martin Thoma (http://stackoverflow.com/users/562769/martin-thoma).
-  The answer that I used was by user Czarek Tomczak
-  (http://stackoverflow.com/users/623622/czarek-tomczak).
+In particular, it helped me with finding the filepath of the directory
+containing the current script that is running (http://stackoverflow.com/
+questions/4934806/how-can-i-find-scripts-directory-with-python). The question
+was asked by user Jonathan (http://stackoverflow.com/users/348545/jonathan)
+and edited by user Martin Thoma
+(http://stackoverflow.com/users/562769/martin-thoma). The answer that I used
+was by user Czarek Tomczak 
+(http://stackoverflow.com/users/623622/czarek-tomczak).
 
 Zach Kirsch and Nikhil Shinday from the Tufts University Computer
 Science Facebook group suggested that I use pickle for saving/loading objects
