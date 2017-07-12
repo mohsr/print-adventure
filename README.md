@@ -18,7 +18,7 @@ starting with item 1, then 2, and so on.
   1. Combat abilities
   2. Enemies
   3. Combat system
-  4. NPCs
+  4. Non-combat NPCs
   5. Interaction between player and world
   6. Quests
 
