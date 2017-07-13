@@ -7,7 +7,6 @@ Last edited: 07/12/17
 
 """
 
-#import os
 import basics
 
 # An Item.
