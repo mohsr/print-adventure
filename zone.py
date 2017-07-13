@@ -7,7 +7,6 @@ Last edited: 07/11/17
 
 """
 
-import npc
 import random
 
 # Holds the map of the world.
