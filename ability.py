@@ -17,3 +17,15 @@ class Ability:
     # Return:     Void
     def __init__(self, abiName = "Cool Move"):
         self.name = abiName
+        # Append a new line ("\n") to end of abilities file if not present
+        basics.fixData("abilities")
+        # Retrieve the ability data
+        self.openData()
+
+    # Purpose:    Retrieve data on the ability.
+    # Parameters: None
+    # Return:     Void
+    def openData(self):
+        # Open abilities file for reading.
+        with open("abilities", "r") as self.reader:
+            pass
