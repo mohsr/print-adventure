@@ -190,7 +190,7 @@ Here is a brief overview of every file and folder in the project.
 
   ### Folders
 
-  src
+  lib
 
     Contains source code and files necessary for running the game, as well as
     the runner file.
