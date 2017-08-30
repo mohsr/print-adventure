@@ -1,7 +1,7 @@
 # Print-Adventure: A text-based adventure
 Written by:  Mohsin Rizvi
 
-Last edited: 08/29/17
+Last edited: 08/18/17
 
 # *README*
 
@@ -77,124 +77,133 @@ numbers can be altered to adjust average biome size.
 
 Here is a brief overview of every file and folder in the project.
 
-  ### Files
+  lib
+
+    __pycache__
+
+      The __pycache__ folder contains bytecode used to run the program.
+
+    games
+
+      sample_game
+
+        This is an actual instance of a saved game file, but is mostly used as
+        a placeholder for the folder. All saved game files will go in the
+        games folder alongside this one.
+
+    abilities
+
+      A directory of combat abilities that can be used in the game.
+
+    ability.py
+
+      Contains the definition of the Ability class for combat abilities.
+
+    basics.py
+
+      Contains definitions of basic functions used for the game.
+
+    battle.py
+
+      Contains the definition of the Battle class for representing combat
+      sequences.
+
+    bio.py
+
+      Contains the definition of the Bio class, which generates and stores
+      background biographical info on a character.
+
+    enemy.py
+
+      Contains the definition of the Enemy class.
+
+    game.py
+
+      Contains the definition of the Game class used to run the whole game.
+
+    item.py
+
+      Contains the definition of the Item class.
+
+    items
+
+      Contains a list of in-game items. To add an item, simply edit the list and
+      type in the following, replacing all items in brackets:
+        For food items:
+          [Name]
+          [Description]
+          Food
+          [Integer amount healed per bite]
+          [Integer number of bites]
+        For armor:
+          [Name]
+          [Description]
+          Armor
+          [Profession to be used by (Warrior, Mage, or Ranger)]
+          [Integer defense]
+          [Integer poison resist]
+          [Integer fire resist]
+          [Integer cold resist]
+          [Integer electricity resist]
+          [Integer earth resist]
+        For weapons:
+          [Name]
+          [Description]
+          Weapon
+          [Profession to be used by (Warrior, Mage, or Ranger)]
+          [Integer damage]
+          [Integer poison damage]
+          [Integer fire damage]
+          [Integer cold damage]
+          [Integer electricity damage]
+          [Integer earth damage]
+          [Integer defense]
+          [Integer poison resist]
+          [Integer fire resist]
+          [Integer cold resist]
+          [Integer electricity resist]
+          [Integer earth resist]
+        For rings:
+          [Name]
+          [Description]
+          Ring
+          [Strength bonus]
+          [Wisdom bonus]
+          [Dexterity bonus]
+          [Charisma bonus]
+          [Luck bonus]
+          [Perception bonus]
+        For misc items (items that are none of the above):
+          [Name]
+          [Description]
+          Misc
+
+    main.py
+
+      Runs the finished game.
+
+    npc.py
+
+      Contains the definition of the NPC class.
+
+    player.py
+
+      Contains the definition of the Player class.
+
+    savegame.py
+
+      Contains the definition of the SaveGame class, which accesses each
+      individual saved game file and all of its informations.
+
+    zone.py
+
+      Contains the definition of the WorldMap class and the Zone class.
+
+  LICENSE
+
+    Contains license information. This project is licensed under the
+    MIT license.
 
   README.md
 
     You're reading this! Contains information on the overall project.
-
-  basics.py
-
-    Contains definitions of basic functions used for the game.
-
-  game.py
-  
-    Contains the definition of the Game class used to run the whole game.
-
-  savegame.py
-
-    Contains the definition of the SaveGame class, which holds each individual
-    saved game file and all of its information.
-
-  runner.py
-
-    Runs the finished game.
-
-  player.py
-  
-    Contains the definition of the Player class.
-    
-  zone.py
-  
-    Contains the definition of the WorldMap class and the Zone class.
-    
-  npc.py
-  
-    Contains the definition of the NPC class.
-
-  enemy.py
-
-    Contains the definition of the Enemy class.
-    
-  ability.py
-  
-    Contains the definition of the Ability class for combat abilities.
-
-  bio.py
-
-    Contains the definition of the Bio class, which generates and stores
-    background biographical info for a character.
-
-  item.py
-
-    Contains the definition of the Item class.
-
-  items
-
-    Contains a list of in-game items. To add an item, simply edit the list and
-    type in the following, replacing all items in brackets:
-      For food items:
-        [Name]
-        [Description]
-        Food
-        [Integer amount healed per bite]
-        [Integer number of bites]
-      For armor:
-        [Name]
-        [Description]
-        Armor
-        [Profession to be used by (Warrior, Mage, or Ranger)]
-        [Integer defense]
-        [Integer poison resist]
-        [Integer fire resist]
-        [Integer cold resist]
-        [Integer electricity resist]
-        [Integer earth resist]
-      For weapons:
-        [Name]
-        [Description]
-        Weapon
-        [Profession to be used by (Warrior, Mage, or Ranger)]
-        [Integer damage]
-        [Integer poison damage]
-        [Integer fire damage]
-        [Integer cold damage]
-        [Integer electricity damage]
-        [Integer earth damage]
-        [Integer defense]
-        [Integer poison resist]
-        [Integer fire resist]
-        [Integer cold resist]
-        [Integer electricity resist]
-        [Integer earth resist]
-      For rings:
-        [Name]
-        [Description]
-        Ring
-        [Strength bonus]
-        [Wisdom bonus]
-        [Dexterity bonus]
-        [Charisma bonus]
-        [Luck bonus]
-        [Perception bonus]
-      For misc items (items that are none of the above):
-        [Name]
-        [Description]
-        Misc
-
-  sample_game
-
-    Contained in the games folder. This is an actual instance of a saved game
-    file, but is mostly used as a placeholder for the folder. All saved game
-    files will go in the games folder alongside this one.
-
-  ### Folders
-
-  lib
-
-    Contains source code and files necessary for running the game, as well as
-    the runner file.
-
-  games
-
-    Contains saved game files.
