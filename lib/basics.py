@@ -24,30 +24,27 @@ def printPairs(comms):
 #             all keys in the given dictionary. Returns key that
 #             input matches. Prompts user until input is valid.
 # Parameters: A dictionary of commands to look through, where keys are
-#             strings and values strings as well.
+#             strings and values describe the keys as well.
 # Return:     The key that input matches.
 def command(comms):
-    inv = True
-    done = False
-
     # Get a command from standard input
-    entered = input().strip()
     # Checks validity of input against each possible command
     while not done:
+        
+        # Read the input
+        # Querying the user is done by the caller
+        entered = input().strip().lower()
         # Check validity of input
         for i in comms:
-            if entered.lower() == i.lower():
+            if entered == i.lower():
                 return i
-        # The rest of the while loop runs if input is invalid
-        if inv:
-            print("-Invalid command. Please enter a new one. Enter \"$\"" +
-                  " for a list of commands.")
-        inv = True
-        entered = input().strip()
+        # The execute reaches here if and only if the command is not found
         # Print possible commands if requested
         if entered == "$":
             printPairs(comms)
-            inv = False
+        else:
+            print("-Invalid command. Please try again. Enter \"$\"" +
+                  " for a list of commands.")
 
 # Purpose:    Appends a new line to the end of the file with the given
 #             filename if one is not already present.
