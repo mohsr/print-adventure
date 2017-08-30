@@ -1,9 +1,9 @@
 """
 
-runner.py
+main.py
 Runs the game. Also used to test the functionality of the game.
 Written by:  Mohsin Rizvi
-Last edited: 05/27/17
+Last edited: 08/29/17
 
 """
 
