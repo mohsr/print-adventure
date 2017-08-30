@@ -24,18 +24,19 @@ class Bio:
     # Parameters: A charRace string indicating the race of the character.
     # Return:     Void
     def generateBio(self, charRace):
-        races = ["Human", "Dwarf", "Elf"]
-        humanHomes = ["Arakas", "Arcpoint", "Baldwater", "Bandura",
+        races = {"Human": ["Arakas", "Arcpoint", "Baldwater", "Bandura",
                       "Cloud City", "Coramar", "Dale", "Fenbrun",
                       "Milheim", "Maanil", "Outerland", "Roth", "Saab",
-                      "Urhall", "Zaab ar Duul"]
-        dwarfHomes = ["Anheil", "Baldwater", "Bd-ran", "Bd-darak",
+                      "Urhall", "Zaab ar Duul"],
+                 "Dwarf": ["Anheil", "Baldwater", "Bd-ran", "Bd-darak",
                       "Cloud City", "Dale", "Fenbrun", "Gaal", "Hirad",
-                      "Milheim", "Nevron", "Urhall", "Zald", "Zanar"]
-        elfHomes = ["Arcpoint," "Bandura", "Belfinar", "Cloud City",
+                      "Milheim", "Nevron", "Urhall", "Zald", "Zanar"],
+                 "Elf": ["Arcpoint," "Bandura", "Belfinar", "Cloud City",
                     "Dale", "Dif an Eil", "Enhreim", "Fenbrun", "Hirad",
                     "Iiliac", "Janis", "Milheim", "Outerland", "Saab",
                     "Uil", "Vaar", "Vaan an Set", "Zaab ar Duul", "Zanar"]
+                }
+        
         jobs = ["Cook", "Warrior", "Mage", "Archmage", "Thief", "Beggar",
                 "King", "Queen", "Paladin", "Ranger", "Actor", "Actress",
                 "Soldier", "Merchant", "Blacksmith", "Silversmith", "Tailor",
@@ -48,12 +49,10 @@ class Bio:
         # Randomly pick a homeland
         if charRace not in races:
             basics.error_quit("ERROR: Invalid character race.")
-        if charRace == "Human":
-            self.home = random.choice(humanHomes)
-        elif charRace == "Dwarf":
-            self.home = random.choice(dwarfHomes)
-        elif charRace == "Elf":
-            self.home = random.choice(elfHomes)
+        for i in races:
+            if charRace == i:
+                self.home = random.choice(races[i])
+                
         # Randomly pick jobs of parents
         self.parent1 = random.choice(jobs)
         self.parent2 = random.choice(jobs)
