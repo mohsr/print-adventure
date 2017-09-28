@@ -5,7 +5,7 @@ battle.py
 Contains the definition of the Battle class for combat between a player
 and one or more enemies.
 Written by:  Mohsin Rizvi
-Last edited: 07/25/17
+Last edited: 09/28/17
 
 """
 
@@ -16,6 +16,8 @@ class Battle:
     # Parameters: A player and a list of enemies to fight against.
     # Return:     True if battle is won, false otherwise.
     def __init__(self, player, *enemies):
+        pass
+        
         # Assign turns to go in battle based on current energy.
         #tempTurns = [player]
         #for i in enemies:
