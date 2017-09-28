@@ -4,7 +4,7 @@ game.py
 Contains the definition of the Game class, used to run the main menu and
 start the game.
 Written by:  Mohsin Rizvi
-Last edited: 05/27/17
+Last edited: 09/28/17
 
 """
 
@@ -83,13 +83,13 @@ class Game:
         for i in saves:
             print(i)
         toLoad = input("Which game would you like to load? Type \"back\" to" +
-                       " return to the main menu.\n").strip()
+                       " go to the main menu.\n").strip()
         if toLoad.lower() == "back":
             return
         while toLoad not in saves:
             toLoad = input("Sorry, that is not a valid game name. Which" +
                          " game would you like to load? Type \"back\" to" +
-                         " return to the main menu.\n").strip()
+                         " go to the main menu.\n").strip()
             if toLoad.lower() == "back":
                 return
         print("Loading game...")
@@ -113,7 +113,7 @@ class Game:
             lowerSaves.append(i.lower())
         # Start the save game
         gameName = input("What would you like to call this new game?" + 
-                         " Type \"back\" to return to the main" +
+                         " Type \"back\" to go to the main" +
                          " menu.\n").strip()
         lowerName = gameName.lower()
         if lowerName == "back":
@@ -122,7 +122,7 @@ class Game:
         or gameName[0] == "."):
             gameName = input("Sorry, that game name is invalid. What would" +
                              " you like to name this game? Type \"back\" to" +
-                             " return to the main menu.\n").strip()
+                             " go to the main menu.\n").strip()
             lowerName = gameName.lower()
             if lowerName == "back":
                 return
@@ -134,8 +134,8 @@ class Game:
     # Parameters: None
     # Return:     Void
     def help(self):
-        print("IMPORTANT: To bring up a summary of game controls, type" +
-              " in \"help\" while in game. To print current commands," +
+        print("To bring up a summary of game controls, type in" +
+              " \"help\" while in game. To print current commands," +
               " type in \"$\". To save the game, type \"save\".")
         print("To enter commands, enter them in with the keyboard. To" +
               " submit a command, press [enter]. Commands are" +
