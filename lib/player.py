@@ -3,7 +3,7 @@
 player.py
 Contains the definition of the Player class.
 Written by:  Mohsin Rizvi
-Last edited: 07/11/17
+Last edited: 09/28/17
 
 """
 
@@ -11,6 +11,8 @@ import ability
 import item
 import bio
 import zone
+import random
+import damage
 
 # The Player character.
 class Player:
@@ -293,22 +295,87 @@ class Player:
     def calcDamage(self):
         # If the player has no weapon:
         if self.weapon == None:
-            self.damage = 1 * (self.str/2)
+            self.damage = 1 * (self.str / 2)
             return
         # Calculate damage according to weapons for each profession.
         self.damage = self.weapon.damage
         if self.prof == "Warrior":
-            self.damage += self.str
+            self.damage += (self.str * 2)
         elif self.prof == "Mage":
-            self.damage += self.wis
+            self.damage += (self.wis * 2)
         elif self.prof == "Ranger":
-            self.damage += self.dex
+            self.damage += (self.dex * 2)
 
-    # Purpose:    Take the given amount of damage of the given attack type.
-    # Parameters: An int amount of damage, an optional int attack type.
+    # Purpose:    Take the given Damage.
+    # Parameters: A Damage instance and a double protection modifier, which
+    #             defaults to .075.
+    # Return:     Amount of damage dealt.
+    def takeDamage(self, damage_received):
+        # Check if the attack misses
+        miss_chance = int(self.lck + (self.dex * 0.5))
+        miss = random.randrange(0, 101)
+        if (miss <= miss_chance):
+            return 0
+
+        # Calculate whether or not modifier is negative
+        negative = random.randrange(0,2)
+        # Calculate a modifier for damage taken
+        modifier = random.randrange(0, self.defense * mult_modifier)
+        if (negative != 0):
+            modifier *= -1
+
+        # Check for elemental resistances
+        if damage_received.ele_type == "Electric":
+            damage_received.ele_dmg -= self.electric_resist
+        elif damage_received.ele_type == "Fire":
+            damage_received.ele_dmg -= self.fire_resist
+        elif damage_received.ele_type == "Cold":
+            damage_received.ele_dmg -= self.cold_resist
+        elif damage_received.ele_type == "Earth":
+            damage_received.ele_dmg -= self.earth_resist
+        elif damage_received.ele_type == "Poison":
+            damage_received.ele_dmg -= self.poison_resist
+
+        # Check for regular defense and get total, and check for death
+        total_dmg = ((damage_received.reg_damage - self.defense) +
+                    damage_received.ele_dmg) * modifier
+        self.curr_hp -= total_dmg
+        if self.curr_hp <= 0:
+            die()
+
+        return total_dmg
+
+    # Purpose:    "Kills" the player upon death.
+    # Parameters: None
     # Return:     Void
-    def takeDamage(damage_dealt, attack_type = "Default"):
+    def die(self):
         pass
+
+    # Purpose:    Get damage done for an attack, stored in a Damage instance.
+    # Parameters: A string elemental damage type and a double modifier to
+    #             add/subtract from, which defaults to .2.
+    # Return:     A Damage instance to pass to the target.
+    def doDamage(self, ele_type, mult_modifier = 0.2):
+        # Calculate whether or not the modifier will be negative
+        negative = random.randrange(0, 2)
+
+        # Calculate the damage done with a modifier.
+        modifier = random.randrange(0, self.damage * mult_modifier)
+        if negative != 0:
+            modifier *= -1;
+        damage_dealt = self.damage + modifier
+
+        # Return the damage to deal.
+        if ele_type == "Electric":
+            return damage.Damage(damage_dealt, self.electric_dmg, ele_type)
+        elif ele_type == "Fire":
+            return damage.Damage(damage_dealt, self.fire_dmg, ele_type)
+        elif ele_type == "Cold":
+            return damage.Damage(damage_dealt, self.cold_dmg, ele_type)
+        elif ele_type == "Earth":
+            return damage.Damage(damage_dealt, self.earth_dmg, ele_type)
+        elif ele_type == "Poison":
+            return damage.Damage(damage_dealt, self.poison_dmg, ele_type)
 
     # Purpose:    Initialize player's abilities according to class. Abilities
     #             are "given" to the player at start and unlocked over time.
@@ -342,11 +409,13 @@ class Player:
     # Parameters: A string item name to take from the player.
     # Return:     Void
     def takeItem(self, item):
-        for i in self.inv:
-            if self.inv[i].name == item:
-                self.inv.pop(i)
-                return
-        print("ERROR: Item not found")
+        if hasItem(item):
+            for i in self.inv:
+                if self.inv[i].name == item:
+                    self.inv.pop(i)
+                    return
+        else:
+            print("Sorry, you don't have that item.")
 
     # Purpose:    Give the player the given amount of gold.
     # Parameters: An int amount of gold to add.
@@ -368,10 +437,10 @@ class Player:
     # Parameters: An int amount of gold to take from the player.
     # Return:     None
     def takeGold(self, amtGold):
-        if self.gold < amtGold:
-            print("ERROR: Not enough gold")
-            return
-        self.gold -= amtGold
+        if self.hasGold(amtGold):
+            self.gold -= amtGold
+        else:
+            print("Sorry, you don't have enough gold")
 
     # Purpose:    Gives the Player a current zone.
     # Parameters: Two ints representing the x and y coordinates of the
