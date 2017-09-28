@@ -3,7 +3,7 @@
 bio.py
 Contains the definition of the Bio class.
 Written by:  Mohsin Rizvi
-Last edited: 05/27/17
+Last edited: 09/25/17
 
 """
 
@@ -17,7 +17,11 @@ class Bio:
     # Purpose:    Constructs a Bio object.
     # Parameters: A charRace string indicating the race of the character.
     # Return:     Void
-    def __init__(self, charRace):
+    def __init__(self, charRace = "rand"):
+        races = ["Human", "Dwarf", "Elf"]
+
+        if charRace == "rand":
+            self.charRace = random.choice(races)
         self.generateBio(charRace)
 
     # Purpose:    Generates a random biography with the given charRace string.
@@ -45,6 +49,7 @@ class Bio:
                 "Reverand", "Warlock", "Necromancer", "Peasant", "Lumberjack",
                 "Outlaw", "Professor", "Arcanomancer", "Pyromancer", "Monk",
                 "Prince", "Princess", "Duke", "Duchess", "Assasssin"]
+
         # Randomly pick a homeland
         if charRace not in races:
             basics.error_quit("ERROR: Invalid character race.")
