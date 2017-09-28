@@ -1,0 +1,59 @@
+enemies
+List of enemies. See README.md for more info on adding new ones.
+Written by:  Mohsin Rizvi
+Last edited: 09/25/17
+
+Plains
+Highwayman
+Humanoid
+A shifty robber of the streets.
+5
+2
+1
+0
+0
+0
+0
+0
+1
+0
+0
+0
+0
+0
+---
+Forest
+Boar
+Beast
+A wild, hairy, tusky beast!
+3
+1
+2
+0
+0
+0
+0
+0
+1
+0
+0
+0
+0
+0
+---
+Rainforest
+---
+Dunes
+---
+Mountains
+---
+Hills
+---
+Desert
+---
+Steppes
+---
+Snows
+---
+Volcano
+---
