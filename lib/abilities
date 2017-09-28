@@ -1,7 +1,14 @@
+abilities
+List of combat abilities. See README.md for more info on adding new ones.
+Written by:  Mohsin Rizvi
+Last edited: 09/25/17
+
 Fireball
 Attack
 Fire
 5
+1
 Block
 Defense
 5
+1
