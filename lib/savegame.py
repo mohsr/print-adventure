@@ -4,7 +4,7 @@ savegame.py
 Contains the definition of the SaveGame class which holds an instance of the
 game.
 Written by:  Mohsin Rizvi
-Last edited: 07/12/17
+Last edited: 09/28/17
 
 """
 
@@ -88,7 +88,7 @@ class SaveGame:
         race = basics.command(raceComms)
         # Collect player profession
         time.sleep(1)
-        print(("Ah, good. So, %s, how do you plan on defending yourself" +
+        print(("Ah, okay. So, %s, how do you plan on defending yourself" +
               " in these vast lands? Are you a warrior, a mage, or a" +
               " ranger?") % name)
         prof = basics.command(jobComms)
