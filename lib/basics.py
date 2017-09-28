@@ -28,26 +28,25 @@ def printPairs(comms):
 # Return:     The key that input matches.
 def command(comms):
     inv = True
-    done = False
 
     # Get a command from standard input
     entered = input().strip()
     # Checks validity of input against each possible command
-    while not done:
+    while True:
         # Check validity of input
         for i in comms:
             if entered.lower() == i.lower():
                 return i
+        # Print possible commands if requested
+        if entered == "$":
+            printPairs(comms)
+            inv = False
         # The rest of the while loop runs if input is invalid
         if inv:
             print("-Invalid command. Please enter a new one. Enter \"$\"" +
                   " for a list of commands.")
         inv = True
         entered = input().strip()
-        # Print possible commands if requested
-        if entered == "$":
-            printPairs(comms)
-            inv = False
 
 # Purpose:    Appends a new line to the end of the file with the given
 #             filename if one is not already present.
