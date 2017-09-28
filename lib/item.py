@@ -3,11 +3,10 @@
 item.py
 Contains the definition of the Item class.
 Written by:  Mohsin Rizvi
-Last edited: 07/12/17
+Last edited: 09/25/17
 
 """
 
-#import os
 import basics
 
 # An Item.
@@ -23,19 +22,19 @@ class Item:
         self.openData()
 
     # Purpose:    Gives the item data according to its name using a database
-    #             of items stored in a file.
+    #             of items stored in a file, until empty string is reached.
     # Parameters: None
     # Return:     Void
     def openData(self):
         # Open item directory file for reading.
         with open("items", "r") as self.reader:
             # Find the correct item in the file
-            # Read one line at a time, seeing if it is the empty string (eof)
+            # Read one line at a time, seeing if it is the empty string
             x = self.reader.readline()
             if x == "":
                 print("ERROR: Item not found.")
                 return
-            # While item is not found, search until empty string (eof)
+            # While item is not found, search until empty string
             while x.lower() != self.name.lower() + "\n":
                 x = self.reader.readline()
                 if x == "":
