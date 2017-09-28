@@ -1,7 +1,7 @@
 # Print-Adventure: A text-based adventure
 Written by:  Mohsin Rizvi
 
-Last edited: 08/29/17
+Last edited: 09/28/17
 
 # *README*
 
@@ -16,13 +16,13 @@ Things yet to be implemented are listed below. I plan on implementing them
 starting with item 1, then 2, and so on.
 
   1. Combat abilities
-  2. Enemies
   3. Combat system
   4. Dungeons
   5. Non-combat NPCs
   6. Towns and cities
   7. Interaction between player and world
   8. Quests
+  9. Other things I might think of
 
 ## B. Acknowledgments
 
@@ -112,6 +112,38 @@ Here is a brief overview of every file and folder in the project.
 
       Contains the definition of the Bio class, which generates and stores
       background biographical info on a character.
+
+    damage.py
+
+      Contains the definition of the Damage class, used to enable the player
+      and enemies to deal damage during combat.
+
+    enemies
+
+      Contains a list of in-game enemies, sorted by biome. Note that the same
+      biome should not appear more than once. To add another enemy to the same
+      biome, add its data before the "---" line. To add an enemy, edit the
+      list and type in the following, replacing all items in brackets:
+        [Biome1]
+        [Enemy1_name]
+        [Enemy1_type] (e.g. "Beast")
+        [Enemy1_desc]
+        [Enemy1_maxHP]
+        [Enemy1_maxEnergy]
+        [Enemy1_regDamage]
+        [Enemy1_poisonDamage]
+        [Enemy1_fireDamage]
+        [Enemy1_coldDamage]
+        [Enemy1_electricDamage]
+        [Enemy1_earthDamage]
+        [Enemy1_defense]
+        [Enemy1_poisonResist]
+        [Enemy1_fireResist]
+        [Enemy1_coldResist]
+        [Enemy1_electricResist]
+        [Enemy1_earthResist]
+        ---
+        [Biome2]
 
     enemy.py
 
