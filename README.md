@@ -1,7 +1,7 @@
 # Print-Adventure: A text-based adventure
 Written by:  Mohsin Rizvi
 
-Last edited: 09/28/17
+Last edited: 12/13/17
 
 # *README*
 
@@ -11,6 +11,12 @@ A randomly-generated text-based RPG with save files! Also, written
 in Python. I'm doing this project because it seems like fun, and I love
 RPGs! I've also wanted to write a text-based game for a while now.
 I chose Python over C++ so that I could gain more experience using Python.
+
+### NOTICE:
+
+As of 12/13/17, I've decided to convert this to C++, since it just brings me
+more joy to write in C++, and I've learned a lot of Python by this point in
+my career already. I'll convert it later on, after I release my game.
 
 Things yet to be implemented are listed below. I plan on implementing them
 starting with item 1, then 2, and so on.
